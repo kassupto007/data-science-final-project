@@ -15,12 +15,10 @@ NYC Vehicle Collision Data Science Project
 - `Jupyter Notebook` 
   - `data_cleaning.ipynb`: Includes code for data cleaning and pre-processing. It also contains the data dictionary. 
   - `EDA.ipynb`: Includes code for exploratory data analysis on our data with different statistical descriptions and graph interpretations.
-  - `logistic_regression.ipynb`: Includes the code for our model and its classification report.
 
 - `Scripts`
   - `data_cleaning.py`: Script for data cleaning and pre-processing.
   - `EDA.py`: Script for exploratory data analysis, including descriptive statistics and charts.
-  - `logistic_regression.py`: Script for our model and its classification report.
 
 ### Exploratory Analysis
 - We use Matplotlib and Seaborn to analyze our data and see trends in our data. We see which year has the most collisions, which borough has more collisions overall, how many people get killed each year. There are several features that we don’t need in our predictive model such as COLLISION ID, ZIP CODE, etc. that we have dropped in our “./Jupyter Notebook/logistic_regression.ipynb” and “./Jupyter Notebook/data_cleaning.ipynb” notebook. After analyzing and choosing the required features, we will use the Logistic Regression model for predicting borough. This model tends to work well with large datasets.
