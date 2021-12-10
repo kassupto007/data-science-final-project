@@ -12,11 +12,11 @@ NYC Vehicle Collision Data Science Project
   - `Motor_Vehicle_Collisions_-_Crashes.cvs`: Raw NYC collisions data from the NYC Open data.
   - `cleaned_data.csv`: Cleaned dataset for modeling.
 
-- `Jupyter Notebook` 
+- `Jupyter Notebook Files` 
   - `data_cleaning.ipynb`: Includes code for data cleaning and pre-processing. It also contains the data dictionary. 
   - `EDA.ipynb`: Includes code for exploratory data analysis on our data with different statistical descriptions and graph interpretations.
 
-- `Scripts`
+- `Scripts Files`
   - `data_cleaning.py`: Script for data cleaning and pre-processing.
   - `EDA.py`: Script for exploratory data analysis, including descriptive statistics and charts.
 
