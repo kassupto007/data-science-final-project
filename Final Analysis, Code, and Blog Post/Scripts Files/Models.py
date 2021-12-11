@@ -38,16 +38,53 @@ def models():
     #Model Prediction
     pred = logreg.predict(X_test)
     
+    #Making a class predictions for the training set
+    y_pred_train = logreg.predict(X_train)
+    print(accuracy_score(y_train, y_pred_train))
+    
+    #Making a class predictions for the testing set
+    y_pred_test = logreg.predict(X_test)
+
     #Checking our model accuracy
-    print("Logistic Regression Model score is: " + str(accuracy_score(y_test, pred)))
+    print(accuracy_score(y_test, y_pred_test))
+    
+    #Confusion Matrix
+    cm = confusion_matrix(y_test, y_pred_test)
+    print(cm)
+    fig, ax = plt.subplots(figsize=(15,8))
+    plot_confusion_matrix(logreg, X_test, y_test, ax=ax)
+    plt.grid(False)
+    plt.show()
+    
+    #Classification report of our model
+    print(classification_report(y_test, y_pred_test))
+    
     
     #Neural Network
     #Using sklearn to to train a Neural Network (MLP Classifier) on the training set
     nn = MLPClassifier(hidden_layer_sizes=(12, 6), max_iter=10)
     nn.fit(X_train, y_train)
 
+    #Making a class predictions for the training set
+    y_pred_train = nn.predict(X_train)
+    print(accuracy_score(y_train, y_pred_train))
+    
+    #Making a class predictions for the testing set
+    y_pred_test = nn.predict(X_test)
+
     #Checking our model accuracy
-    print("Neural Network Model score is: " + str(nn.score(X_test, y_test)))
+    print(accuracy_score(y_test, y_pred_test))
+    
+    #Confusion Matrix
+    cm = confusion_matrix(y_test, y_pred_test)
+    print(cm)
+    fig, ax = plt.subplots(figsize=(15,8))
+    plot_confusion_matrix(nn, X_test, y_test, ax=ax)
+    plt.grid(False)
+    plt.show()
+    
+    #Classification report of our model
+    print(classification_report(y_test, y_pred_test))
     
     #K-Nearest Neighbors
     # Using sklearn to 'train' a k-Neighbors Classifier
@@ -56,19 +93,25 @@ def models():
     k_neighbors = KNeighborsClassifier(n_neighbors=5)
     k_neighbors.fit(X_train, y_train)
 
+    #Making a class predictions for the training set
+    y_pred_train = k_neighbors.predict(X_train)
+    print(accuracy_score(y_train, y_pred_train))
+    
+    #Making a class predictions for the testing set
+    y_pred_test = k_neighbors.predict(X_test)
+
     #Checking our model accuracy
-    print("K-Nearest Neighbors Model score is: " + str(k_neighbors.score(X_test, y_test)))
+    print(accuracy_score(y_test, y_pred_test))
     
     #Confusion Matrix
-    cm = confusion_matrix(y_test, pred)
+    cm = confusion_matrix(y_test, y_pred_test)
     print(cm)
 
     fig, ax = plt.subplots(figsize=(15,8))
-    plot_confusion_matrix(logreg, X_test, y_test, ax=ax)
+    plot_confusion_matrix(k_neighbors, X_test, y_test, ax=ax)
     plt.grid(False)
-    plt.show()
     
     #Classification report of our model
-    print(classification_report(y_test, pred))
+    print(classification_report(y_test, y_pred_test))
 
 models()
