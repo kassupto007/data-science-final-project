@@ -7,7 +7,7 @@ warnings.filterwarnings('ignore')
 
 def data_cleaning():
     #importing our dataset
-    df = pd.read_csv("./../../Dataset/Motor_Vehicle_Collisions_-_Crashes.csv")
+    df = pd.read_csv("./Motor_Vehicle_Collisions_-_Crashes.csv")
     
     #Taking 50,000 random samples from our data.
     df = df.sample(n=50000)
